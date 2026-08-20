@@ -1,0 +1,29 @@
+# === Ejecutables y binarios ===
+*.exe
+*.DAT
+*.dat
+*.idx
+*.o
+*.so
+*.dll
+
+# === Codigo C intermedio de GnuCOBOL ===
+*.c
+*.c.l.h
+*.i.l.h
+
+# === Temporales y archivos de trabajo del SORT ===
+*.tmp
+*_Sort.txt
+*_Temp.txt
+
+# === Salidas generadas por los programas ===
+*_Ords.txt
+*-ORDS.TXT
+*-ORD.TXT
+Match.txt
+Match_Ords.txt
+REPORTE.TXT
+
+# === Carpeta bin del IDE (compilados) ===
+bin/

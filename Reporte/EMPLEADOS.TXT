@@ -1,0 +1,8 @@
+000103JUAN                PEREZ               LOPEZ               AV REFORMA                    120  A    JUAREZ                        CUAUHTEMOC          06600MEXICO    
+000101MARIA               GOMEZ               RUIZ                CALLE SOL                     45   2    ROMA NORTE                    CUAUHTEMOC          06700MEXICO    
+000105LUIS                MARTINEZ            VEGA                AV INSURGENTES                800       DEL VALLE                     BENITO JUAREZ       03100MEXICO    
+000102ANA                 LOPEZ               SOTO                CALLE LUNA                    12   B    CONDESA                       CUAUHTEMOC          06140MEXICO    
+000104PEDRO               SANCHEZ             DIAZ                AV UNIVERSIDAD                300  5    NARVARTE                      BENITO JUAREZ       03020MEXICO    
+000107SOFIA               TORRES              LEON                CALLE PINO                    78        POLANCO                       MIGUEL HIDALGO      11560MEXICO    
+000106DIEGO               RUIZ                MORA                AV PATRIOTISMO                215  3    ESCANDON                      MIGUEL HIDALGO      11800MEXICO    
+000108ELENA               DIAZ                CRUZ                CALLE ROBLE                   9         DOCTORES                      CUAUHTEMOC          06720MEXICO    

@@ -1,0 +1,6 @@
+0002000101JUAN                PEREZ               LOPEZ               
+0001000102MARIA               GOMEZ               RUIZ                
+0001000101JUAN                PEREZ               LOPEZ               
+0003000103LUIS                MARTIN              SOTO                
+0004000104PEDRO               DIAZ                VEGA                
+0002000102MARIA               GOMEZ               RUIZ                
