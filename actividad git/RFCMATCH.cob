@@ -13,6 +13,9 @@
            SELECT EMP-ORDS ASSIGN TO DISK "Emp_Ords.txt"
                   ORGANIZATION IS LINE SEQUENTIAL
                   ACCESS MODE IS SEQUENTIAL.
+           SELECT LOG-FILE ASSIGN TO DISK "LOG.TXT"
+                  ORGANIZATION IS LINE SEQUENTIAL
+                  ACCESS MODE IS SEQUENTIAL.
 
       *    -- MODIFICACION PUNTO (a): EMPRESAS ahora es INDEXADO -----
       *    Ya no se usa SORT/EPR-SORT/EPR-ORDS: se lee directo por llave
@@ -77,6 +80,14 @@
 
        FD  REP-FILE.
        01  REP-REG         PIC X(360).
+
+       FD LOG-FILE.
+       01  REG-LOG.
+           05 LOG-RFC-EMPL PIC X(13).
+           05 FILLER       PIC X(2) VALUE "-".
+           05 LOG-RFC-EMPR PIC X(12).
+           05 FILLER       PIC X(2) VALUE "-".
+           05 LOG-MENSAJE  PIC X(30) VALUE "Empleado NO encontrado:)".
 
        WORKING-STORAGE SECTION.
        01  WS-FIN-EMP   PIC X VALUE "N".
@@ -175,6 +186,7 @@
            OPEN INPUT EMP-ORDS.
            OPEN INPUT EMPRESAS-IDX.
            OPEN OUTPUT MATCH-FILE.
+           OPEN OUTPUT LOG-FILE.
            PERFORM LEER-EMP.
            PERFORM UNTIL FIN-EMP
                PERFORM BUSCAR-EMPRESA
@@ -183,6 +195,7 @@
            CLOSE EMP-ORDS.
            CLOSE EMPRESAS-IDX.
            CLOSE MATCH-FILE.
+           CLOSE LOG-FILE.
 
        LEER-EMP.
            READ EMP-ORDS AT END MOVE HIGH-VALUES TO EO-LLAVE
@@ -196,11 +209,18 @@
                MOVE EO-RFC-EMPR TO EP-RFC-EMPR
                READ EMPRESAS-IDX
                    INVALID KEY
-                       CONTINUE
+                       PERFORM ESCRIBIR-LOG
                    NOT INVALID KEY
                        PERFORM ESCRIBIR-MATCH
                END-READ
            END-IF.
+
+       ESCRIBIR-LOG.
+           MOVE SPACES TO REG-LOG.
+           MOVE EO-RFC-EMPL TO LOG-RFC-EMPL.
+           MOVE EO-RFC-EMPR TO LOG-RFC-EMPR.
+           MOVE "Empleado NO encontrado" TO LOG-MENSAJE.
+           WRITE REG-LOG.
 
        ESCRIBIR-MATCH.
            MOVE SPACES TO REG-MATCH.
