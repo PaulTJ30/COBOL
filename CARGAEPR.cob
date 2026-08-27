@@ -6,7 +6,6 @@
       *              antes de ejecutar RFCMATCH.
       * LLAVE      : EP-RFC-EMPL + EP-RFC-EMPR (igual a SP-LLAVE de
       *              RFCMATCH, para que las lecturas por llave calcen)
-      *              Claret, Paul, Sherlyn
       ******************************************************************
        IDENTIFICATION DIVISION.
        PROGRAM-ID. CARGAEPR.
